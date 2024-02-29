@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сповіщення</title>
+</head>
+<body>
+<h1>{{.Message}}</h1>
+<form action="/saveInfo?{{.ID}}" method="post">
+    <input type="text" id="surname" name="surname" placeholder="Введіть своє прізвище та ім'я" size= "30" required>
+    <label for="surname"> прочитав(-ла) сповіщення</label>
+    <br>
+    <br>
+    <input type="submit" value="Відправити">
+</form>
+
+</body>
+</html>

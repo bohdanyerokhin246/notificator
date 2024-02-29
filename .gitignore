@@ -1,0 +1,4 @@
+/bin/
+/config/administration.txt
+/config/all.txt
+/db/initdb.go

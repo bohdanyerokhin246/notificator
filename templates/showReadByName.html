@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список прочитавших сповіщення</title>
+    <style>
+        @media print {
+            body {margin: 0.5cm; }
+            form {display: none}
+        }
+        table {
+            border-collapse: collapse;
+            text-indent: initial;
+            border-spacing: 0px;
+        }
+        p {
+
+            border: 1px solid;
+            height: 15px;
+            padding: 5px;
+            text-align: center;
+            margin-block-start: 0px;
+            margin-block-end: 0px;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+
+    </style>
+</head>
+<body>
+
+<table>
+    {{range $y, $x := . }}
+    <tr>
+        <td>
+            <p>ПІБ</p>
+            {{range $x.ReadByDoctorList}}
+            <p>{{.}}</p>
+            {{end}}
+        </td>
+        <td>
+            <p>Підпис</p>
+            {{range $x.ReadByDoctorList}}
+            <p></p>
+            {{end}}
+        </td>
+
+    </tr>
+    {{end}}
+</table>
+
+<form action="/selectNotifications" method="post">
+    <input type="submit" value="Повернутися до всіх сповішень">
+</form>
+<form action="/" method="post">
+    <input type="submit" value="Повернутися на головну">
+</form>
+
+</body>
+</html>

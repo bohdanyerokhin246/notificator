@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель адміністратора</title>
+</head>
+<body>
+<h1>{{.}}</h1>
+<form action="/notificationSent" method="post">
+    <label for="message">Введіть текст сповіщення</label>
+    <br>
+    <input type="text" id="message" name="message" placeholder="Текст сповіщення" size= "100" required>
+    <br>
+    <label for="ipGroup">Оберіть группу для розсилки</label>
+    <select id="ipGroup" name="ipGroup" autofocus>
+        <option value=""></option>
+        <option value="administration">Апарат управління</option>
+        <option value="all">Всі</option>
+    </select>
+    <br>
+    <input type="submit" value="Відправити сповіщення">
+</form>
+
+<form action="/" method="post">
+    <input type="submit" value="Повернутися на головну сторінку">
+</form>
+
+</body>
+</html>

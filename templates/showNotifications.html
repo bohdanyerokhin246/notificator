@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список всіх сповіщень</title>
+</head>
+<body>
+<table>{{range $y, $x := . }}
+    <tr>
+
+        <td>{{ $x.ID }}</td>
+        <td>{{ $x.Message }}</td>
+        <td>
+            <form action="/showReadByName?{{ $x.ID }}" method="post">
+                <input type="submit" value="Преглянути список тих, хто прочитав">
+            </form>
+        </td>
+        <td>
+            <form action="/showReadByList?{{ $x.ID }}" method="post">
+            <input type="submit" value="Преглянути всю інформацію про це сповіщення">
+            </form>
+        </td>
+    </tr>{{end}}
+</table>
+
+<form action="/" method="post">
+    <input type="submit" value="Повернутися на головну">
+</form>
+</body>
+</html>
